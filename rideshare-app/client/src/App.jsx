@@ -5,7 +5,7 @@ function App() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:5000')
+    axios.get(import.meta.env.VITE_API_URL)
       .then(res => setMessage(res.data))
       .catch(err => console.error(err));
   }, []);
